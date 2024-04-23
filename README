@@ -6,10 +6,8 @@
  
  1. About
 
-	jMemorize is written in Java and uses Leitner-flashcards to make 
-	memorizing facts not only more efficient but also more fun. 
-	jMemorize manages your learn progress and features categories, 
-	statistics and a visually appealing and intuitive interface.
+	jMemorize is a versatile Java-based application designed to optimize the memorization process through the implementation of Leitner-flashcards methodology. 
+Its primary objective is to enhance the efficiency and enjoyment of learning by effectively managing learning progress and providing a range of features to support users in their study endeavors. 
 
  2. How to run
     
