@@ -1,0 +1,11 @@
+Project Description
+
+This project is mainly concerned with helping users to improve their memorizing skills. This is done by using flashcards, the app lets users create and edit flash cards, and some other functionalities.
+
+The main functionalities provided in this project:
+
+Flashcards: It uses a special method called Leitner-flashcards, which helps you learn new information gradually by sorting them into various levels based on how well you remember them.
+
+Category: This functionality is concerned with organizing and facilitating users’ learning path by categorizing each set of flashcards.
+
+Progress Tracking: This is an important function as it shows the user how well he did in the learning path and which points he should focus on.
