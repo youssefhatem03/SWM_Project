@@ -1,0 +1,23 @@
+[KAN-7] Missing the "Do you want to save before exiting" Dialog Created: 25/Apr/24  Updated: 25/Apr/24 
+
+Status:	To Do
+Project:	jMemorize
+
+Components:	None 
+Affects versions:	None 
+Fix versions:	None 
+
+Type: 	Task 	Priority: 	Medium 
+Reporter: 	Youssef Hatem 
+Assignee: 	eyad hany 
+
+Resolution: 	Unresolved 	Votes: 	0 
+Labels: 	Bug
+Remaining Estimate:	2 days 
+Time Spent:	1 day 
+Original estimate:	3 days 
+
+Rank:	0|i00013: 
+
+ Description  	 
+When exiting the app without saving it does not send a message, which causes data loss.
