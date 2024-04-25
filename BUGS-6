@@ -1,0 +1,27 @@
+[KAN-6] Card Reset Functionality seems to work only for single cards Created: 25/Apr/24  Updated: 25/Apr/24 
+
+Status:	To Do
+Project:	jMemorize
+
+Components:	None 
+Affects versions:	None 
+Fix versions:	None 
+
+Type: 	Task 	Priority: 	Medium 
+Reporter: 	Youssef Hatem 
+Assignee: 	Moaz Mashhour 
+
+Resolution: 	Unresolved 	Votes: 	0 
+Labels: 	Bug 
+Remaining Estimate:	5 days 
+Time Spent:	1 day
+Original estimate:	6 days 
+
+Rank:	0|i0000v: 
+
+
+ Description  	 
+
+The reset functionality doesn’t work for the rest of the cards unlike the single cards.
+Card Reset Functionality seems to work only for single cards --> bulk reset does not work.
+
