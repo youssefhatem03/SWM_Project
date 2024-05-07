@@ -258,7 +258,27 @@ public class CardPanel extends JPanel
             StyleConstants.setBold(attr, enabled);
         }
     }
-    
+
+
+    private class StrikeThruAction extends AbstractStyledTextAction
+    {
+        public StrikeThruAction()
+        {
+            super("font-strike-through");
+            addShortcut(KeyStroke.getKeyStroke(KeyEvent.VK_B, CTRL_MASK));
+        }
+
+        public boolean hasStyle(AttributeSet attr)
+        {
+            return StyleConstants.isStrikeThrough(attr);
+        }
+
+        public void setStyle(MutableAttributeSet attr, boolean enabled)
+        {
+            StyleConstants.setStrikeThrough(attr, enabled);
+        }
+    }
+
     private class ItalicAction extends AbstractStyledTextAction
     {
         public ItalicAction()
