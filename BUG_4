@@ -1,0 +1,23 @@
+[KAN-4] Romanian Characters are not displayed properly Created: 25/Apr/24  Updated: 25/Apr/24 
+
+Status:	To Do
+Project:	jMemorize
+
+Components:	None 
+Affects versions:	None 
+Fix versions:	None 
+
+Type: 	Task 	Priority: 	Medium 
+Reporter: 	Nour Adel 
+Assignee: 	Nour Adel 
+
+Resolution: 	Unresolved 	Votes: 	0 
+Labels: 	Bug 
+Remaining Estimate:	2 days 
+Time Spent:	1 day
+Original estimate:	3 days
+
+Rank:	0|i0000f: 
+
+Description  	 
+Romanian Characters are not displayed properly on the Frontside of the cards, although they look ok on the back side of the cards. 
