@@ -1,0 +1,37 @@
+
+q
+java:S3740ˆ"/Provide the parametrized type for this generic.(Ö¼ÔâøÿÿÿÿJ$0692a6b7-6d46-45c2-9c9f-0761424f114e
+q
+java:S3740ˆ"/Provide the parametrized type for this generic.(Ö¼ÔâøÿÿÿÿJ$0eee440c-1e0f-4eef-bdb6-c595c807f0bb
+l
+java:S3740í"/Provide the parametrized type for this generic.(ô ÎĞJ$abee248d-53a9-4f8b-82a4-b42a14ba8781
+l
+java:S3740í"/Provide the parametrized type for this generic.(ô ÎĞJ$730fabcd-aa57-4d32-93e8-b37efe833759
+q
+java:S3740ù"/Provide the parametrized type for this generic.(Ğ†çşùÿÿÿÿJ$c0385140-c4fd-4ed8-b8d3-af2013b785e3
+›
+java:S2293—"YReplace the type specification in this constructor call with the diamond operator ("<>").(éİ”ÕÿÿÿÿÿJ$3f36aa2e-daae-486d-b744-68f94d6e2f27
+j
+java:S1604±"(Make this anonymous inner class a lambda(±ÃšıÿÿÿÿJ$89031528-89aa-4d81-96e4-7c1f421ae927
+ˆ
+java:S2259í"KA "NullPointerException" could be thrown; "defaultBundle" is nullable here.(ô ÎĞJ$f252560b-8926-49ea-8836-5b10700a2785
+
+java:S2259ë"DA "NullPointerException" could be thrown; "bundle" is nullable here.(å½ñøJ$c8705a18-6655-4ef7-8107-a3340f76024f
+›
+java:S3008D"ZRename this field "m_defaultBundle" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÓöŸûÿÿÿÿJ$f7c94ab3-c4b5-4ec5-9521-e0144d49453f
+—
+java:S3008E"[Rename this field "m_fallbackBundle" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¯…äßJ$21ff25ef-b456-40f9-8879-3de557f99953
+k
+java:S1874¬".Remove this use of "Locale"; it is deprecated.(Êı§‚J$fa90bf58-6d00-410a-a701-4dd710fb4c5e
+k
+java:S1874¬".Remove this use of "Locale"; it is deprecated.(Êı§‚J$13c39296-209b-43e8-be3b-509e32a0b568
+l
+java:S2093š"*Change this "try" to a try-with-resources.(ç£êúÿÿÿÿJ$c643ac20-af59-4f90-8d6d-ab47db66981c
+g	java:S106ñ"+Replace this use of System.out by a logger.(™†«ñJ$14b0f49b-1058-4429-8953-aefb7162163a
+g	java:S106ô"+Replace this use of System.out by a logger.(ùàèüJ$eb56dc89-51c3-4cb8-87a7-0fc14d238bc4
+l	java:S106ø"+Replace this use of System.out by a logger.(ÎŠ˜ıÿÿÿÿJ$ddb18213-c920-4ec2-84ad-41f79c63aed1
+l	java:S106ü"+Replace this use of System.out by a logger.(Ã×Ñ¬úÿÿÿÿJ$e02ffa8d-0ed7-4a2a-8aec-ed5a49c30f24
+l	java:S106ş"+Replace this use of System.out by a logger.(ªÓ¼áşÿÿÿÿJ$4a920fd5-8599-40a0-9389-377a46547308
+l	java:S106‚"+Replace this use of System.out by a logger.(ªÓ¼áşÿÿÿÿJ$10d19b5a-1a89-481c-ab0c-ff317519d8ea
+a
+java:S1168š"$Return an empty map instead of null.(¥¹ïJ$e2697c94-2f91-47e1-99e5-517e781adc70

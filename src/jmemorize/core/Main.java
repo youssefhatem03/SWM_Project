@@ -430,7 +430,6 @@ public class Main extends Observable implements LearnSessionProvider,
         String property = PROPERTIES.getProperty("project.release"); //$NON-NLS-1$
         return !Boolean.valueOf(property).booleanValue();
     }
-    
     /*
      * Logging utilities
      */
