@@ -1,0 +1,25 @@
+
+[KAN-2] error when loading .jml file Created: 25/Apr/24  Updated: 25/Apr/24 
+
+Status:	To Do
+Project:	jMemorize
+
+Components:	None 
+Affects versions:	None 
+Fix versions:	None 
+
+Type: 	Task 	Priority: 	High 
+Reporter: 	Youssef Hatem 
+Assignee: 	Youssef Hatem 
+
+Resolution: 	Unresolved 	Votes: 	0 
+Labels: 	Bug 
+Remaining Estimate:	5 days 
+Time Spent:	6 hours 
+Original estimate:	1 day 
+
+Rank:	0|i00007: 
+
+ Description  	 
+when trying to open a file with .jml file in the app, an error occurs
+
