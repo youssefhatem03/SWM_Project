@@ -79,11 +79,11 @@ import com.jgoodies.forms.layout.Sizes;
  * 
  * @author djemili
  */
-public class CardPanel extends JPanel 
+public class CardPanel extends JPanel
 {
     /**
      * A interface that allows to listen for textchanges to the card side text
-     * panes. Use {@link CardPanel#addTextObserver} method to hook it to
+    // * panes. Use {@link CardPanel#addTextObserver} method to hook it to
      * the CardPanel.
      */
     public interface CardPanelObserver
@@ -258,7 +258,27 @@ public class CardPanel extends JPanel
             StyleConstants.setBold(attr, enabled);
         }
     }
-    
+
+    private class StrikeThruAction extends AbstractStyledTextAction
+    {
+        public StrikeThruAction()
+        {
+            super("font-strike-through");
+            addShortcut(KeyStroke.getKeyStroke(KeyEvent.VK_B, CTRL_MASK));
+        }
+
+        public boolean hasStyle(AttributeSet attr)
+        {
+            return StyleConstants.isStrikeThrough(attr);
+        }
+
+        public void setStyle(MutableAttributeSet attr, boolean enabled)
+        {
+            StyleConstants.setStrikeThrough(attr, enabled);
+        }
+    }
+
+
     private class ItalicAction extends AbstractStyledTextAction
     {
         public ItalicAction()
@@ -673,11 +693,12 @@ public class CardPanel extends JPanel
         toolBar.add(createButton(new UnderlineAction(), "text_underline.png"));
         toolBar.add(createButton(new SupAction(), "text_superscript.png"));
         toolBar.add(createButton(new SubAction(), "text_subscript.png"));
-        
+        toolBar.add(createButton(new StrikeThruAction(), "strike-thru.png"));
+
         toolBar.addSeparator();
         toolBar.add(createButton(new InsertImageAction(), "picture_add.png"));
         toolBar.add(createButton(new RemoveImageAction(), "picture_delete.png"));
-        
+
         toolBar.setFloatable(false);
         return toolBar;
     }
@@ -687,7 +708,7 @@ public class CardPanel extends JPanel
         JPopupMenu menu = new JPopupMenu();
         menu.add(createMenuItem(new DefaultEditorKit.CopyAction(), 
             Localization.get(LC.COPY), "edit_copy.gif"));
-        
+
         if (editable)
         {
             menu.add(createMenuItem(new DefaultEditorKit.CutAction(), 
@@ -699,13 +720,13 @@ public class CardPanel extends JPanel
             menu.addSeparator();
             
             // TODO add localization
-            menu.add(createMenuItem(new BoldAction(), "Bold", "text_bold.png"));
+            menu.add(createMenuItem(new BoldAction(), "Bold", "bold.png"));
             menu.add(createMenuItem(new ItalicAction(), "Italic", "text_italic.png"));
             menu.add(createMenuItem(new UnderlineAction(), "Underline", "text_underline.png"));
             menu.add(createMenuItem(new SupAction(), "Superscript", "text_superscript.png"));
             menu.add(createMenuItem(new SubAction(), "Subscript", "text_subscript.png"));
         }
-        
+
         return menu;
     }
     
