@@ -720,7 +720,7 @@ public class CardPanel extends JPanel
             menu.addSeparator();
             
             // TODO add localization
-            menu.add(createMenuItem(new BoldAction(), "Bold", "bold.png"));
+            menu.add(createMenuItem(new BoldAction(), "Bold", "text_bold.png"));
             menu.add(createMenuItem(new ItalicAction(), "Italic", "text_italic.png"));
             menu.add(createMenuItem(new UnderlineAction(), "Underline", "text_underline.png"));
             menu.add(createMenuItem(new SupAction(), "Superscript", "text_superscript.png"));
