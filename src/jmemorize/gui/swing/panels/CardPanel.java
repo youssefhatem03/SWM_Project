@@ -339,6 +339,25 @@ public class CardPanel extends JPanel
             StyleConstants.setSuperscript(attr, false);
         }
     }
+    //Added a new feature
+    private class StrikeThruAction extends AbstractStyledTextAction
+    {
+        public StrikeThruAction()
+        {
+            super("font-strike-through");
+            addShortcut(KeyStroke.getKeyStroke(KeyEvent.VK_B, CTRL_MASK));
+        }
+
+        public boolean hasStyle(AttributeSet attr)
+        {
+            return StyleConstants.isStrikeThrough(attr);
+        }
+
+        public void setStyle(MutableAttributeSet attr, boolean enabled)
+        {
+            StyleConstants.setStrikeThrough(attr, enabled);
+        }
+    }
     
     private class ShowCardSideButton extends JButton implements ActionListener
     {
@@ -673,6 +692,7 @@ public class CardPanel extends JPanel
         toolBar.add(createButton(new UnderlineAction(), "text_underline.png"));
         toolBar.add(createButton(new SupAction(), "text_superscript.png"));
         toolBar.add(createButton(new SubAction(), "text_subscript.png"));
+        toolBar.add(createButton(new StrikeThruAction(), "strike-thru.png"));
         
         toolBar.addSeparator();
         toolBar.add(createButton(new InsertImageAction(), "picture_add.png"));
