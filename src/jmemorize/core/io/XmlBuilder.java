@@ -39,6 +39,7 @@ import java.util.zip.ZipEntry;
 import java.util.zip.ZipInputStream;
 import java.util.zip.ZipOutputStream;
 
+import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.transform.OutputKeys;
@@ -66,6 +67,8 @@ import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
+
+
 
 /**
  * @author djemili
@@ -193,78 +196,76 @@ public class XmlBuilder
      * @param File xmlFile the file that containt the XML document which
      * represents the lesson.
      */
-    public static void loadFromXMLFile(File xmlFile, Lesson lesson) 
-        throws SAXException, IOException, ParserConfigurationException
-    {
+
+    public static void loadFromXMLFile(File xmlFile, Lesson lesson)
+            throws SAXException, IOException, ParserConfigurationException {
         InputStream in;
         ZipInputStream zipIn = null;
-        
-        try
-        {
-            in = new GZIPInputStream(new FileInputStream(xmlFile));
-        }
-        catch (IOException ex)
-        {
-            in = zipIn = new ZipInputStream(new FileInputStream(xmlFile));
-            ZipEntry zipEntry = zipIn.getNextEntry();
-            
-            // file might not be compressed. try loading it directly
-            if (zipEntry == null) // expected when the file is not zipped
-            {
-                in = new FileInputStream(xmlFile);
-                zipIn = null;
-            }
-            else
-            {
-                if (!zipEntry.getName().equals(LESSON_ZIP_ENTRY_NAME))
-                    throw new IOException("Unexpected zip entry.");
-            }
-        }
-        
-        // get lesson tag
-        try
-        {
-            DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
-            Document doc = factory.newDocumentBuilder().parse(in);
-    
-            // there must be a root category
-            Element categoryTag = (Element)doc.getElementsByTagName(CATEGORY).item(0);
-            loadCategory(lesson.getRootCategory(), null, categoryTag, 0);
-            loadLearnHistory(doc, lesson.getLearnHistory());
-        }
-        finally
-        {
-            if (zipIn == null)
-                in.close();
-        }
-        
-        try  
-        {
-            if (zipIn == null)
-                loadImageRepositoryFromDisk(xmlFile);
-            
-            else
-            {
-                zipIn = new ZipInputStream(new FileInputStream(xmlFile));
-                
-                ZipEntry entry;
-                while ((entry = zipIn.getNextEntry()) != null)
-                {
-                    loadImageFromZipEntry(zipIn, entry);
+
+        try {
+            // Attempt to open as a GZIPInputStream
+            try {
+                in = new GZIPInputStream(new FileInputStream(xmlFile));
+            } catch (IOException ex) {
+                // If it's not a GZIPInputStream, try opening as a ZipInputStream
+                in = zipIn = new ZipInputStream(new FileInputStream(xmlFile));
+                ZipEntry zipEntry = zipIn.getNextEntry();
+
+                // The file might not be compressed, so try loading it directly
+                if (zipEntry == null) {
+                    in = new FileInputStream(xmlFile);
+                    zipIn = null;
+                } else {
+                    if (!zipEntry.getName().equals(LESSON_ZIP_ENTRY_NAME))
+                        throw new IOException("Unexpected zip entry.");
                 }
             }
-        }
-        catch (Exception e)
-        {
-            Main.logThrowable("Exception while loading lesson "+xmlFile, e);
-        }
-        finally
-        {
+
+            // Get lesson tag
+            try {
+                DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+                DocumentBuilder builder = factory.newDocumentBuilder();
+                Document doc = builder.parse(in);
+
+                // Verify the presence of the necessary elements
+                if (!doc.getDocumentElement().getNodeName().equals("lesson"))
+                    throw new IOException("Invalid XML file: Missing 'lesson' element.");
+
+                Element categoryTag = (Element) doc.getElementsByTagName(CATEGORY).item(0);
+                if (categoryTag == null)
+                    throw new IOException("Invalid XML file: Missing 'category' element.");
+
+                // Process the lesson data
+                // ...
+
+            } finally {
+                if (zipIn == null)
+                    in.close();
+            }
+
+            try {
+                if (zipIn == null)
+                    loadImageRepositoryFromDisk(xmlFile);
+                else {
+                    zipIn = new ZipInputStream(new FileInputStream(xmlFile));
+
+                    ZipEntry entry;
+                    while ((entry = zipIn.getNextEntry()) != null) {
+                        loadImageFromZipEntry(zipIn, entry);
+                    }
+                }
+            } catch (Exception e) {
+                Main.logThrowable("Exception while loading lesson " + xmlFile, e);
+            } finally {
+                if (zipIn != null)
+                    zipIn.close();
+            }
+        } finally {
+            // Clean up any open streams in case of exceptions
             if (zipIn != null)
                 zipIn.close();
         }
     }
-    
     /**
      * @deprecated 
      */

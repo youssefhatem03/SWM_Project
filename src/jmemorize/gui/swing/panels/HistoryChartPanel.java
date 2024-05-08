@@ -250,9 +250,10 @@ public class HistoryChartPanel extends JPanel
         renderer.setMaximumBarWidth(0.2);
         
         CategoryItemRenderer renderer2 = new LineAndShapeRenderer(true, false);
-        renderer2.setSeriesPaint(0, new Color(75, 150, 200));
+        //renderer2.setSeriesPaint(0, new Color(75, 150, 200));
+        renderer2.setSeriesPaint(0, new Color(0, 0, 0));
         plot.setRenderer(1, renderer2);
-        
+
         plot.setRenderer(renderer);
     }
     

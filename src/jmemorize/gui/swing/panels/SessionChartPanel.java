@@ -96,10 +96,10 @@ public class SessionChartPanel extends JPanel
         plot.setLabelFont(plot.getLabelFont().deriveFont(11f));
         plot.setLabelGenerator(new StandardPieSectionLabelGenerator("{1} ({2})"));
         
-        plot.setSectionPaint(Localization.get(LC.LEARNED), ColorConstants.LEARNED_CARDS);
-        plot.setSectionPaint(Localization.get(LC.FAILED), ColorConstants.EXPIRED_CARDS);
-        plot.setSectionPaint(Localization.get(LC.SKIPPED), ColorConstants.UNLEARNED_CARDS);
-        plot.setSectionPaint(Localization.get(LC.RELEARNED), ColorConstants.RELEARNED_CARDS);
+        plot.setSectionPaint(Localization.get(LC.LEARNED), ColorConstants.SIDEBAR_COLOR);
+        plot.setSectionPaint(Localization.get(LC.FAILED), ColorConstants.SIDEBAR_COLOR);
+        plot.setSectionPaint(Localization.get(LC.SKIPPED), ColorConstants.SIDEBAR_COLOR);
+        plot.setSectionPaint(Localization.get(LC.RELEARNED), ColorConstants.SIDEBAR_COLOR);
         
         return chart;        
     }

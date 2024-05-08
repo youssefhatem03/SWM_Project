@@ -22,10 +22,12 @@ import java.awt.event.ActionEvent;
 import java.io.File;
 import java.io.IOException;
 import java.text.MessageFormat;
+import org.xml.sax.SAXException;
 
 import javax.swing.JFileChooser;
 import javax.swing.JFrame;
 import javax.swing.filechooser.FileFilter;
+import javax.xml.parsers.ParserConfigurationException;
 
 import jmemorize.core.Lesson;
 import jmemorize.core.Main;
@@ -101,7 +103,7 @@ public abstract class AbstractImportAction extends AbstractSessionDisabledAction
     /**
      * Imports given file contents into given lesson.
      */
-    protected abstract void doImport(File file, Lesson lesson) throws IOException;
+    protected abstract void doImport(File file, Lesson lesson) throws IOException, ParserConfigurationException, SAXException;
     
     protected abstract FileFilter getFileFilter();
 }

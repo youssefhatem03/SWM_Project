@@ -19,47 +19,53 @@
 package jmemorize.gui.swing.actions.file;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 
 import javax.swing.filechooser.FileFilter;
+import javax.xml.parsers.ParserConfigurationException;
 
 import jmemorize.core.Lesson;
 import jmemorize.core.io.XmlBuilder;
 import jmemorize.gui.LC;
 import jmemorize.gui.Localization;
 import jmemorize.gui.swing.frames.MainFrame;
+import org.xml.sax.SAXException;
 
-public class ImportJMLAction extends AbstractImportAction
-{
-    public ImportJMLAction()
-    {
-        setValues();
-    }
-    
-    /* (non-Javadoc)
-     * @see jmemorize.gui.swing.actions.file.AbstractImportAction
-     */
-    protected void doImport(File file, Lesson lesson) throws IOException
-    {
-        try
-        {
-            XmlBuilder.loadFromXMLFile(file, lesson);
-        } 
-        catch (Exception e)
-        {
-            throw new IOException(e.getLocalizedMessage());
-        }
-    }
+public class ImportJMLAction extends AbstractImportAction {
 
-    protected FileFilter getFileFilter()
-    {
-        return MainFrame.FILE_FILTER;
-    }
-    
-    private void setValues()
-    {
+
+    private void setValues() {
         setName(Localization.get(LC.FILE_FILTER_DESC));
         setMnemonic(1);
         setIcon("/resource/icons/file_saveas.gif"); //$NON-NLS-1$
     }
+
+    public ImportJMLAction() {
+        setValues();
+    }
+
+    protected void doImport(File file, Lesson lesson) throws IOException,  ParserConfigurationException, SAXException {
+        try {
+            if (!file.exists()) {
+                throw new FileNotFoundException("File not found: " + file.getAbsolutePath());
+            }
+            if (!file.canRead()) {
+                throw new IOException("Cannot read file: " + file.getAbsolutePath());
+            }
+
+            XmlBuilder.loadFromXMLFile(file, lesson);
+        } catch (FileNotFoundException e) {
+            throw new FileNotFoundException("File not found: " + file.getAbsolutePath());
+        } catch (IOException e) {
+            throw new IOException("Error reading file: " + file.getAbsolutePath(), e);
+        } catch (Exception e) {
+            throw new IOException("Unexpected error: " + e.getMessage(), e);
+        }
+    }
+
+    protected FileFilter getFileFilter() {
+        return MainFrame.FILE_FILTER;
+    }
+
 }

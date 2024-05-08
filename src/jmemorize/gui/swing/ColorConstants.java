@@ -27,15 +27,33 @@ import java.awt.Color;
  */
 public interface ColorConstants
 {
-    public final static Color UNLEARNED_CARDS       = Color.GRAY;
-    public final static Color EXPIRED_CARDS         = Color.RED;
-    public final static Color LEARNED_CARDS         = new Color(0, 235, 0);
-    public final static Color RELEARNED_CARDS       = Color.ORANGE;
-    public final static Color PARTIAL_LEARNED_CARDS = LEARNED_CARDS.brighter();
+//    public final static Color UNLEARNED_CARDS       = Color.GRAY;
+//    public final static Color EXPIRED_CARDS         = Color.RED;
+//    public final static Color LEARNED_CARDS         = new Color(0, 235, 0);
+//    public final static Color RELEARNED_CARDS       = Color.ORANGE;
+//    public final static Color PARTIAL_LEARNED_CARDS = LEARNED_CARDS.brighter();
+//
+//    public final static Color SELECTION_COLOR       = new Color(0, 80, 107);
+//    public static final Color SIDEBAR_COLOR         = new Color(225, 230, 235);
+//
+//    public static final Color CARD_SIDE_BAR_COLOR   = new Color(255, 240, 200);
+//    static final Color        CARD_PANEL_COLOR      = Color.WHITE;
 
-    public final static Color SELECTION_COLOR       = new Color(0, 80, 107);
-    public static final Color SIDEBAR_COLOR         = new Color(225, 230, 235);
+    public final static Color UNLEARNED_CARDS       = Color.black;
+    public final static Color EXPIRED_CARDS         = Color.black;
+    public final static Color LEARNED_CARDS         = new Color(255, 255, 255);
+    public final static Color RELEARNED_CARDS       = Color.black;
+    public final static Color PARTIAL_LEARNED_CARDS = LEARNED_CARDS.darker();
 
-    public static final Color CARD_SIDE_BAR_COLOR   = new Color(255, 240, 200);
-    static final Color        CARD_PANEL_COLOR      = Color.WHITE;
+    public final static Color SELECTION_COLOR       = new Color(255, 255, 255);
+    public static final Color SIDEBAR_COLOR         = new Color(255, 255, 255);
+
+    public static final Color CARD_SIDE_BAR_COLOR   = new Color(255, 255, 255);
+    static final Color        CARD_PANEL_COLOR      = Color.BLACK;
+
+
+
+
+
+
 }

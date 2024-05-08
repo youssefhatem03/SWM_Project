@@ -125,7 +125,7 @@ public class DeckChartPanel extends JPanel implements CategoryObserver
             }
             else
             {
-                setOutlinePaint(Color.WHITE, false);
+                setOutlinePaint(Color.black, false);
                 setBaseItemLabelFont(m_defaultFont, false);
                 setItemLabelFont(m_defaultFont, false);
             }

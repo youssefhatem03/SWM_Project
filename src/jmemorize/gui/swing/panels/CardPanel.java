@@ -296,6 +296,22 @@ public class CardPanel extends JPanel
             StyleConstants.setUnderline(attr, enabled);
         }
     }
+
+
+    private class SuperscriptAction extends AbstractStyledTextAction {
+        public SuperscriptAction() {
+            super("font-superscript");
+            addShortcut(KeyStroke.getKeyStroke(KeyEvent.VK_S, CTRL_MASK));
+        }
+
+        public boolean hasStyle(AttributeSet attr) {
+            return StyleConstants.isSuperscript(attr);
+        }
+
+        public void setStyle(MutableAttributeSet attr, boolean enabled) {
+            StyleConstants.setSuperscript(attr, enabled);
+        }
+    }
     
     private class SupAction extends AbstractStyledTextAction
     {
